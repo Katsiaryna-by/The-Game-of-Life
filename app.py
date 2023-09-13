@@ -61,12 +61,15 @@ class GameOfLife(metaclass=SingletonMeta):
 
 @app.route('/')
 def index():
+    GameOfLife(25, 25)
     return render_template('index.html')
 
 
 @app.route('/live')
 def live():
-    return render_template('live.html')
+    game = GameOfLife()
+    game.form_new_generation()
+    return render_template('live.html', game=game)
 
 
 if __name__ == '__main__':
