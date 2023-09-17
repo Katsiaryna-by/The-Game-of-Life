@@ -10,6 +10,8 @@
             {% for j in range(game.world[0]|length) %}
                 {% if game.world[i][j] %}
                     <td class="cell living-cell"></td>
+                {% elif game.world[i][j]==0 and game.old_world[i][j] %}
+                    <td class="cell dead-cell"></td>
                 {% else %}
                     <td class="cell"></td>
                 {% endif %}
@@ -22,7 +24,7 @@
 {% block scripts %}
     {{ super() }}
     <script>
-    setInterval(() => window.location.reload(), 1000);
+    setInterval(() => window.location.reload(), 2000);
     </script>
 {% endblock %}
 

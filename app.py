@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
 import random
+import copy
 from threading import Lock
 
 app = Flask(__name__)
@@ -24,8 +25,10 @@ class GameOfLife(metaclass=SingletonMeta):
         self.__height = height
         self.counter = counter
         self.world = self.generate_universe()
+        self.old_world = self.world
 
     def form_new_generation(self):
+        self.old_world = copy.deepcopy(self.world)
         universe = self.world
         new_world = [[0 for _ in range(self.__width)] for _ in range(self.__height)]
 
