@@ -23,4 +23,4 @@ In the '[requirements.txt](requirements.txt)' file.
 1. Download the project or clone it from the repository.
 2. Open a command prompt and navigate to the project directory.
 3. Install the required packages by running the following command: `pip install -r requirements.txt`
-4. Start the application with the following command: `python app.py`
+4. Start the application with the following command: `python game_of_life.py`
